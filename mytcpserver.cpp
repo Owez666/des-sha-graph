@@ -60,7 +60,7 @@ void MyTcpServer::slotServerRead(QTcpSocket* socket)
     QString buf = QString::fromUtf8(raw);
 
     buf.replace('\r', '\n');
-    const QStringList lines = buf.split('\n', Qt::SkipEmptyParts);
+    const QStringList lines = buf.split('\n', QString::SkipEmptyParts);
 
     for (const QString &lineRaw : lines) {
         QString line = lineRaw.trimmed();
